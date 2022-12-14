@@ -1,0 +1,12 @@
+{% if list %}
+<h1>{{list.choice_set}}</h1>
+    <ul>
+        {% for item in list %}
+            <li><a href="{% url 'polls:detail' item.id %}">{{item.question_text}}</a></li>
+            {% endfor %}
+     </ul>
+        {% else %}
+            <p> No olls are available.</p>
+        {% endif %}
+
+        
